@@ -64,19 +64,19 @@ async def unmute_error(ctx, error):
         await ctx.send(f'`You do not have necessary permissions`')
 
 
-# kick 
-@client.command()
-@commands.has_permissions(ban_members=True)
-async def kick(ctx, member:discord.Member = None):
-    if not member:
-        await ctx.send("Please specify a member")
-        return
-    await member.kick()
-    await ctx.send(f"{member.mention} got yeeted")
-@kick.error
-async def kick_error(ctx, error):
-    if isinstance(error, commands.CheckFailure):
-        await ctx.send(f'`You do not have necessary permissions`')
+# # kick 
+# @client.command()
+# @commands.has_permissions(ban_members=True)
+# async def kick(ctx, member:discord.Member = None):
+#     if not member:
+#         await ctx.send("Please specify a member")
+#         return
+#     await member.kick()
+#     await ctx.send(f"{member.mention} got yeeted")
+# @kick.error
+# async def kick_error(ctx, error):
+#     if isinstance(error, commands.CheckFailure):
+#         await ctx.send(f'`You do not have necessary permissions`')
 
 
 # ban
