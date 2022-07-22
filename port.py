@@ -107,11 +107,11 @@ async def unban(ctx, member):
 			return
 
 
-# clear
-@client.command()
-@has_permissions(manage_messages=True)
-async def clear(ctx, amount = 5):
-	await ctx.channel.purge(limit=amount)
+# # clear
+# @client.command()
+# @has_permissions(manage_messages=True)
+# async def clear(ctx, amount = 5):
+# 	await ctx.channel.purge(limit=amount)
 
 # # help *gonna add more stuff after bot is finished*
 # @client.command(aliases = ['halp'])
