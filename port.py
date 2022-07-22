@@ -79,32 +79,32 @@ async def unmute_error(ctx, error):
 #         await ctx.send(f'`You do not have necessary permissions`')
 
 
-# ban
-@client.command()
-@commands.has_permissions(ban_members=True)
-async def ban(ctx, member:discord.Member = None):
-    if not member:
-        await ctx.send("Please specify a member")
-        return
-    await member.ban()
-    await ctx.send(f"{member.mention} vanished ?????")
-@ban.error
-async def ban_error(ctx, error):
-    if isinstance(error, commands.CheckFailure):
-        await ctx.send(f'`You do not have necessary permissions`')
-# unban
-@client.command()
-@has_permissions(ban_members=True)
-async def unban(ctx, member):
-	banned_users = await ctx.guild.bans()
-	member_name, member_discriminator = member.split('#')\
+# # ban
+# @client.command()
+# @commands.has_permissions(ban_members=True)
+# async def ban(ctx, member:discord.Member = None):
+#     if not member:
+#         await ctx.send("Please specify a member")
+#         return
+#     await member.ban()
+#     await ctx.send(f"{member.mention} vanished ?????")
+# @ban.error
+# async def ban_error(ctx, error):
+#     if isinstance(error, commands.CheckFailure):
+#         await ctx.send(f'`You do not have necessary permissions`')
+# # unban
+# @client.command()
+# @has_permissions(ban_members=True)
+# async def unban(ctx, member):
+# 	banned_users = await ctx.guild.bans()
+# 	member_name, member_discriminator = member.split('#')\
 
-	for ban_entry in banned_users: 
-		user = ban_entry.user
-		if (user.name, user.discriminator) == (member_name, member_discriminator): 
-			await ctx.guild.unban(user)
-			await ctx.send(f'Unbanned {user.mention}')
-			return
+# 	for ban_entry in banned_users: 
+# 		user = ban_entry.user
+# 		if (user.name, user.discriminator) == (member_name, member_discriminator): 
+# 			await ctx.guild.unban(user)
+# 			await ctx.send(f'Unbanned {user.mention}')
+# 			return
 
 
 # # clear
